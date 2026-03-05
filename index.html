@@ -1,0 +1,1799 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dra. Flávia Thibes — Odontologia de Alto Padrão</title>
+
+  <!-- Google Fonts: Cormorant Garant (luxury serif) + Raleway (refined sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+/* ══════════════════════════════════════════════════════
+   CLÍNICA PREMIUM — Alto Padrão Odontológico
+   Design: Marble Carrara · Deep Navy · Luxury Blue
+══════════════════════════════════════════════════════ */
+
+:root {
+  --white:        #FFFFFF;
+  --off-white:    #FAFBFD;
+  --navy:         #1A3560;
+  --navy-deep:    #0F2240;
+  --blue-mid:     #2A5FAC;
+  --sky:          #3B9FE8;
+  --sky-light:    #7EC8F5;
+  --gold:         #B8966E;
+  --gold-light:   #D4B896;
+  --text-body:    #3A4A5E;
+  --text-light:   #6B7A8D;
+  --text-muted:   #9AA5B4;
+  --border-soft:  rgba(26, 53, 96, 0.09);
+  --border-gold:  rgba(184, 150, 110, 0.25);
+
+  /* Marble texture as CSS custom property */
+  --marble-bg:
+    repeating-linear-gradient(
+      108deg,
+      transparent 0%, transparent 7%,
+      rgba(170,188,215,0.035) 7%, rgba(170,188,215,0.035) 8%
+    ),
+    repeating-linear-gradient(
+      -38deg,
+      transparent 0%, transparent 12%,
+      rgba(155,178,210,0.04) 12%, rgba(155,178,210,0.04) 13%
+    ),
+    radial-gradient(ellipse at 15% 65%, rgba(185,208,235,0.22) 0%, transparent 48%),
+    radial-gradient(ellipse at 82% 25%, rgba(162,185,220,0.18) 0%, transparent 42%),
+    radial-gradient(ellipse at 50% 90%, rgba(200,218,240,0.12) 0%, transparent 35%),
+    linear-gradient(145deg, #f7fafd 0%, #edf2f9 38%, #f2f6fb 65%, #f9fbfe 100%);
+
+  --marble-dark-bg:
+    repeating-linear-gradient(
+      110deg,
+      transparent 0%, transparent 8%,
+      rgba(60,90,140,0.06) 8%, rgba(60,90,140,0.06) 9%
+    ),
+    repeating-linear-gradient(
+      -35deg,
+      transparent 0%, transparent 14%,
+      rgba(50,80,130,0.05) 14%, rgba(50,80,130,0.05) 15%
+    ),
+    radial-gradient(ellipse at 20% 60%, rgba(42,95,172,0.15) 0%, transparent 45%),
+    radial-gradient(ellipse at 78% 30%, rgba(26,53,96,0.2) 0%, transparent 40%),
+    linear-gradient(145deg, #1f3d6e 0%, #172f58 45%, #1a3560 75%, #1c3764 100%);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background: var(--white);
+  color: var(--text-body);
+  overflow-x: hidden;
+}
+
+/* ── NAVEGAÇÃO ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 22px 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255,255,255,0.94);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-soft);
+  transition: all 0.45s ease;
+}
+
+nav.scrolled {
+  padding: 15px 72px;
+  box-shadow: 0 4px 40px rgba(26,53,96,0.07);
+}
+
+.nav-logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  gap: 3px;
+}
+
+.nav-logo .name {
+  font-family: 'Cormorant Garant', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: 0.04em;
+}
+
+.nav-logo .tagline {
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 0; height: 1px;
+  background: var(--gold);
+  transition: width 0.35s ease;
+}
+
+.nav-links a:hover::after { width: 100%; }
+.nav-links a:hover { color: var(--blue-mid); }
+
+.nav-cta {
+  background: var(--navy) !important;
+  color: white !important;
+  padding: 11px 26px !important;
+  border-radius: 2px !important;
+  font-weight: 600 !important;
+  font-size: 10px !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+  transition: background 0.3s, box-shadow 0.3s !important;
+}
+
+.nav-cta:hover {
+  background: var(--blue-mid) !important;
+  box-shadow: 0 8px 28px rgba(26,53,96,0.25) !important;
+}
+
+.nav-cta::after { display: none !important; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 130px 72px 90px;
+  position: relative;
+  overflow: hidden;
+  background: var(--off-white);
+}
+
+/* Subtle marble in hero background */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--marble-bg);
+  pointer-events: none;
+}
+
+/* Thin gold accent line on left */
+.hero::after {
+  content: '';
+  position: absolute;
+  left: 72px;
+  top: 130px;
+  bottom: 90px;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, var(--gold-light) 30%, var(--gold-light) 70%, transparent);
+  opacity: 0.4;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-bg svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.025;
+}
+
+.molecule {
+  position: absolute;
+  right: 8%;
+  bottom: 15%;
+  pointer-events: none;
+  opacity: 0.05;
+  transition: transform 0.1s linear;
+}
+
+.hero-left {
+  max-width: 580px;
+  padding-left: 40px;
+  padding-right: 40px;
+  animation: fadeInUp 1s ease both;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: 1px solid var(--border-gold);
+  border-radius: 2px;
+  padding: 8px 18px;
+  margin-bottom: 36px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.hero-badge::before {
+  content: '';
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+  animation: pulse-dot 2.5s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.6); }
+}
+
+.hero-h1 {
+  font-family: 'Cormorant Garant', serif;
+  font-size: clamp(40px, 4.2vw, 64px);
+  font-weight: 300;
+  line-height: 1.08;
+  color: var(--navy);
+  margin-bottom: 28px;
+  letter-spacing: -0.02em;
+}
+
+.hero-h1 strong {
+  font-weight: 600;
+  display: block;
+}
+
+.hero-h1 em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--blue-mid);
+}
+
+.hero-sub {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--text-light);
+  margin-bottom: 48px;
+  max-width: 440px;
+  letter-spacing: 0.01em;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+/* ── BUTTONS ── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--navy);
+  color: white;
+  padding: 18px 36px;
+  border-radius: 2px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s, box-shadow 0.3s, transform 0.25s;
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.btn-primary:hover {
+  background: var(--blue-mid);
+  box-shadow: 0 16px 40px rgba(26,53,96,0.3);
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--navy);
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: gap 0.3s, color 0.3s;
+  border-bottom: 1px solid var(--border-gold);
+  padding-bottom: 4px;
+}
+
+.btn-ghost:hover { gap: 16px; color: var(--blue-mid); border-color: var(--sky-light); }
+.btn-ghost svg { transition: transform 0.3s; }
+.btn-ghost:hover svg { transform: translateX(4px); }
+
+.btn-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  color: var(--navy);
+  padding: 18px 36px;
+  border-radius: 2px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.btn-white:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+}
+
+.btn-outline-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: white;
+  padding: 18px 36px;
+  border-radius: 2px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 1px solid rgba(255,255,255,0.28);
+  transition: border-color 0.25s, background 0.25s;
+}
+
+.btn-outline-white:hover {
+  border-color: rgba(255,255,255,0.65);
+  background: rgba(255,255,255,0.07);
+}
+
+/* ── HERO PHOTO FRAME ── */
+.hero-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInRight 1.1s ease 0.2s both;
+  position: relative;
+  z-index: 1;
+}
+
+.photo-frame {
+  position: relative;
+  width: 440px;
+  height: 530px;
+}
+
+/* Elegant rectangular border instead of morphing blob */
+.photo-frame::before {
+  content: '';
+  position: absolute;
+  top: -14px; left: -14px;
+  right: 14px; bottom: -14px;
+  border: 1px solid var(--border-gold);
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+.photo-frame::after {
+  content: '';
+  position: absolute;
+  top: -5px; left: -5px;
+  right: 5px; bottom: -5px;
+  border: 0.5px solid rgba(26,53,96,0.12);
+  border-radius: 3px;
+  pointer-events: none;
+}
+
+.photo-inner {
+  position: absolute;
+  inset: 0;
+  border-radius: 3px;
+  overflow: hidden;
+  background: #eef3f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 30px 80px rgba(26,53,96,0.18), 0 8px 32px rgba(59,159,232,0.10);
+}
+
+.photo-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+}
+
+.photo-placeholder {
+  text-align: center;
+  padding: 40px;
+}
+
+.photo-placeholder svg { opacity: 0.35; }
+.photo-placeholder p {
+  margin-top: 16px;
+  font-size: 11px;
+  color: var(--navy);
+  opacity: 0.45;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ── FLOATING ACCENTS ── */
+.float-accent {
+  position: absolute;
+  background: white;
+  border-radius: 3px;
+  padding: 16px 20px;
+  box-shadow: 0 8px 40px rgba(26,53,96,0.12);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--navy);
+  white-space: nowrap;
+  border-left: 3px solid var(--gold);
+}
+
+.float-accent .dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--gold);
+  animation: pulse-dot 2.5s infinite;
+}
+
+.float-accent-1 { bottom: 60px; left: -36px; animation: float1 4.5s ease-in-out infinite; }
+.float-accent-2 { top: 80px; right: -24px; animation: float2 5s ease-in-out infinite 1s; }
+
+@keyframes float1 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes float2 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+/* ── STATS STRIP ── */
+.stats-strip {
+  background: var(--marble-dark-bg);
+  padding: 56px 72px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.stats-strip::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold) 20%, var(--gold-light) 50%, var(--gold) 80%, transparent);
+}
+
+.stats-strip::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(184,150,110,0.3) 30%, rgba(184,150,110,0.3) 70%, transparent);
+}
+
+.stat-item {
+  text-align: center;
+  padding: 24px 20px;
+  border-right: 1px solid rgba(255,255,255,0.06);
+}
+
+.stat-item:last-child { border-right: none; }
+
+.stat-number {
+  font-family: 'Cormorant Garant', serif;
+  font-size: 56px;
+  font-weight: 300;
+  color: white;
+  line-height: 1;
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+
+.stat-number span { color: var(--gold-light); }
+
+.stat-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* ── SECTION COMMONS ── */
+section { padding: 120px 72px; }
+
+.section-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.section-eyebrow::before {
+  content: '';
+  width: 32px; height: 1px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+}
+
+.section-title {
+  font-family: 'Cormorant Garant', serif;
+  font-size: clamp(32px, 3.8vw, 54px);
+  font-weight: 300;
+  color: var(--navy);
+  line-height: 1.12;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.section-title strong { font-weight: 600; }
+
+.section-sub {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--text-light);
+  line-height: 1.85;
+  max-width: 560px;
+  letter-spacing: 0.01em;
+}
+
+/* ── ESPECIALIDADES ── */
+.especialidades {
+  background: var(--off-white);
+  position: relative;
+}
+
+/* Marble texture on especialidades section */
+.especialidades::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--marble-bg);
+  pointer-events: none;
+}
+
+.especialidades > * { position: relative; z-index: 1; }
+
+.esp-header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+
+.esp-header .section-eyebrow { justify-content: center; }
+.esp-header .section-eyebrow::before { display: none; }
+.esp-header .section-sub { margin: 0 auto; }
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.card {
+  background: white;
+  border-radius: 4px;
+  padding: 52px 40px;
+  border: 1px solid var(--border-soft);
+  border-top: 2px solid var(--border-gold);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+              box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+              border-color 0.4s;
+  cursor: default;
+}
+
+/* Marble top highlight */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--sky) 30%, var(--blue-mid) 70%, transparent);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; right: 0;
+  width: 80px; height: 80px;
+  background: radial-gradient(circle at 100% 100%, rgba(26,53,96,0.03) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 28px 70px rgba(26,53,96,0.12), 0 6px 20px rgba(59,159,232,0.07);
+  border-color: var(--border-soft);
+}
+
+.card:hover::before { opacity: 1; }
+
+.card-icon {
+  width: 64px; height: 64px;
+  margin-bottom: 32px;
+}
+
+.card-number {
+  position: absolute;
+  top: 28px; right: 32px;
+  font-family: 'Cormorant Garant', serif;
+  font-size: 72px;
+  font-weight: 300;
+  color: var(--navy);
+  opacity: 0.035;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.card h3 {
+  font-family: 'Cormorant Garant', serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.card p {
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--text-light);
+  font-weight: 300;
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 28px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: gap 0.3s, color 0.3s;
+}
+
+.card-link:hover { gap: 14px; color: var(--blue-mid); }
+
+/* ── MARBLE DIVIDER BANNER ── */
+.marble-banner {
+  padding: 72px 72px;
+  background: var(--marble-bg);
+  border-top: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.marble-banner::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-light) 30%, var(--gold-light) 70%, transparent);
+  opacity: 0.6;
+}
+
+.marble-banner::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-light) 30%, var(--gold-light) 70%, transparent);
+  opacity: 0.6;
+}
+
+.banner-text {
+  max-width: 620px;
+}
+
+.banner-text h3 {
+  font-family: 'Cormorant Garant', serif;
+  font-size: clamp(24px, 2.5vw, 36px);
+  font-weight: 300;
+  color: var(--navy);
+  line-height: 1.2;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.banner-text h3 em {
+  font-style: italic;
+  color: var(--blue-mid);
+}
+
+.banner-text p {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-light);
+  letter-spacing: 0.02em;
+}
+
+.banner-cro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 20px 32px;
+  border: 1px solid var(--border-gold);
+  border-radius: 3px;
+  background: white;
+  box-shadow: 0 4px 24px rgba(26,53,96,0.06);
+  white-space: nowrap;
+}
+
+.banner-cro .cro-number {
+  font-family: 'Cormorant Garant', serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: 0.05em;
+}
+
+.banner-cro .cro-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ── SOBRE ── */
+.sobre {
+  background: var(--marble-bg);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+  position: relative;
+}
+
+.sobre::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--marble-bg);
+  pointer-events: none;
+}
+
+.sobre > * { position: relative; z-index: 1; }
+
+.sobre-image { position: relative; }
+
+.sobre-img-wrap {
+  border-radius: 4px;
+  overflow: hidden;
+  background: linear-gradient(145deg, #D8E8F4, #B8D0EA);
+  aspect-ratio: 4/5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 24px 70px rgba(26,53,96,0.16);
+  border: 1px solid var(--border-soft);
+}
+
+.sobre-img-wrap svg { opacity: 0.3; }
+
+.sobre-badge {
+  position: absolute;
+  bottom: -24px; left: -24px;
+  background: var(--marble-dark-bg);
+  color: white;
+  border-radius: 3px;
+  padding: 28px 32px;
+  text-align: center;
+  box-shadow: 0 16px 50px rgba(26,53,96,0.35);
+  border: 1px solid rgba(184,150,110,0.2);
+}
+
+.sobre-badge::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  border-radius: 3px 3px 0 0;
+}
+
+.sobre-badge .big {
+  font-family: 'Cormorant Garant', serif;
+  font-size: 48px;
+  font-weight: 300;
+  color: white;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.sobre-badge .big span { color: var(--gold-light); }
+
+.sobre-badge .small {
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+
+.sobre-content { padding: 24px 0; }
+.sobre-content .section-title { margin-bottom: 28px; }
+.sobre-content .section-sub { margin-bottom: 40px; }
+
+.sobre-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 48px;
+}
+
+.sobre-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  font-size: 14px;
+  color: var(--text-body);
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+.sobre-list .check {
+  flex-shrink: 0;
+  width: 22px; height: 22px;
+  background: linear-gradient(135deg, rgba(59,159,232,0.1), rgba(42,95,172,0.08));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+  border: 1px solid rgba(59,159,232,0.2);
+}
+
+.sobre-list .check svg { width: 10px; height: 10px; }
+
+.drs-tags {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.dr-tag {
+  background: white;
+  border: 1px solid var(--border-gold);
+  border-radius: 2px;
+  padding: 10px 20px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: 0.08em;
+}
+
+/* ── DEPOIMENTOS ── */
+.depoimentos {
+  background: var(--off-white);
+  text-align: center;
+}
+
+.dep-header { margin-bottom: 64px; }
+.dep-header .section-eyebrow { justify-content: center; }
+.dep-header .section-eyebrow::before { display: none; }
+
+.dep-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.dep-card {
+  background: white;
+  border-radius: 4px;
+  padding: 40px 36px;
+  text-align: left;
+  border: 1px solid var(--border-soft);
+  border-top: 2px solid var(--border-gold);
+  transition: transform 0.35s, box-shadow 0.35s;
+  position: relative;
+}
+
+.dep-card::before {
+  content: '\201C';
+  position: absolute;
+  top: 24px; right: 32px;
+  font-family: 'Cormorant Garant', serif;
+  font-size: 80px;
+  font-weight: 300;
+  color: var(--navy);
+  opacity: 0.04;
+  line-height: 1;
+}
+
+.dep-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 56px rgba(26,53,96,0.10);
+}
+
+.stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 22px;
+}
+
+.stars svg { color: var(--gold); }
+
+.dep-text {
+  font-family: 'Cormorant Garant', serif;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--text-body);
+  font-style: italic;
+  font-weight: 300;
+  margin-bottom: 28px;
+}
+
+.dep-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.dep-avatar {
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy), var(--blue-mid));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garant', serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: white;
+  border: 1px solid rgba(184,150,110,0.3);
+}
+
+.dep-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.04em;
+}
+
+.dep-city {
+  font-size: 10px;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* ── CTA SECTION ── */
+.cta-section {
+  background: var(--marble-dark-bg);
+  text-align: center;
+  padding: 120px 72px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold) 20%, var(--gold-light) 50%, var(--gold) 80%, transparent);
+}
+
+.cta-section::after {
+  content: '';
+  position: absolute;
+  width: 700px; height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(59,159,232,0.06) 0%, transparent 70%);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.cta-section .section-eyebrow {
+  justify-content: center;
+  color: var(--gold-light);
+}
+
+.cta-section .section-eyebrow::before { display: none; }
+
+.cta-section .section-title {
+  color: white;
+  margin: 0 auto 24px;
+  max-width: 640px;
+  font-weight: 300;
+}
+
+.cta-section .section-sub {
+  color: rgba(255,255,255,0.45);
+  margin: 0 auto 52px;
+  text-align: center;
+  max-width: 520px;
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--navy-deep);
+  padding: 72px 72px 40px;
+  position: relative;
+  border-top: 2px solid;
+  border-image: linear-gradient(90deg, transparent, var(--gold) 20%, var(--gold-light) 50%, var(--gold) 80%, transparent) 1;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 52px;
+  margin-bottom: 52px;
+}
+
+.footer-brand .name {
+  font-family: 'Cormorant Garant', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+
+.footer-brand .tagline {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--gold-light);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+.footer-brand p {
+  font-size: 13px;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.35);
+  font-weight: 300;
+  max-width: 280px;
+}
+
+.footer-col h4 {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 22px;
+}
+
+.footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  font-weight: 300;
+  transition: color 0.25s;
+  letter-spacing: 0.02em;
+}
+
+.footer-col ul li a:hover { color: var(--sky-light); }
+
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.footer-contact-item svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--gold-light);
+  opacity: 0.7;
+}
+
+.footer-contact-item span {
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.footer-contact-item a {
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+
+.footer-contact-item a:hover { color: var(--sky-light); }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer-bottom p {
+  font-size: 11px;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.05em;
+  font-weight: 300;
+}
+
+.footer-bottom span { color: var(--gold-light); opacity: 0.7; }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(44px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.12s; }
+.reveal-delay-2 { transition-delay: 0.24s; }
+.reveal-delay-3 { transition-delay: 0.36s; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  nav, nav.scrolled { padding: 16px 32px; }
+  .hero { padding: 120px 32px 80px; }
+  .hero::after { left: 32px; }
+  section { padding: 96px 32px; }
+  .stats-strip { padding: 48px 32px; }
+  .marble-banner { padding: 60px 32px; }
+  footer { padding: 64px 32px 36px; }
+}
+
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .hero { grid-template-columns: 1fr; padding: 110px 28px 60px; }
+  .hero-left { padding-left: 0; padding-right: 0; max-width: 100%; }
+  .hero-right { margin-top: 48px; }
+  .photo-frame { width: 320px; height: 390px; }
+  .stats-strip { grid-template-columns: 1fr 1fr; padding: 44px 28px; }
+  section { padding: 80px 28px; }
+  .cards-grid { grid-template-columns: 1fr; }
+  .sobre { grid-template-columns: 1fr; gap: 48px; }
+  .dep-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .cta-section { padding: 80px 28px; }
+  .marble-banner { padding: 52px 28px; flex-direction: column; text-align: center; }
+  .banner-cro { align-self: center; }
+}
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════
+     NAVEGAÇÃO
+════════════════════════════════════════════ -->
+<nav id="navbar">
+  <div class="nav-logo">
+    <span class="name">Dra. Flávia Thibes</span>
+    <span class="tagline">Odontologia de Alto Padrão</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#especialidades">Especialidades</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#depoimentos">Depoimentos</a></li>
+    <li><a href="#contato">Contato</a></li>
+    <li><a href="https://app.simplesdental.com/simples/agendamento/draflaviathibes" class="nav-cta">Agendar Consulta</a></li>
+  </ul>
+</nav>
+
+<!-- ════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════ -->
+<section class="hero" id="home">
+
+  <div class="hero-bg">
+    <svg viewBox="0 0 1400 900" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <path d="M100,600 Q180,520 260,580 Q340,640 420,560 Q500,480 580,560 Q660,640 740,560 Q820,480 900,560 Q980,640 1060,560 Q1140,480 1220,560 Q1300,640 1380,580" stroke="#1A3560" stroke-width="1.2" fill="none"/>
+      <path d="M100,650 Q180,570 260,630 Q340,690 420,610 Q500,530 580,610 Q660,690 740,610 Q820,530 900,610 Q980,690 1060,610 Q1140,530 1220,610 Q1300,690 1380,630" stroke="#1A3560" stroke-width="0.7" fill="none"/>
+      <circle cx="1200" cy="200" r="130" stroke="#2A5FAC" stroke-width="0.4" fill="none"/>
+      <circle cx="1200" cy="200" r="85" stroke="#2A5FAC" stroke-width="0.3" fill="none"/>
+      <circle cx="200" cy="750" r="110" stroke="#1A3560" stroke-width="0.4" fill="none"/>
+    </svg>
+  </div>
+
+  <div class="molecule" id="molecule">
+    <svg width="200" height="200" viewBox="0 0 200 200" fill="none">
+      <circle cx="100" cy="100" r="14" fill="#1A3560"/>
+      <circle cx="140" cy="60" r="10" fill="#3B9FE8"/>
+      <circle cx="60" cy="60" r="10" fill="#3B9FE8"/>
+      <circle cx="140" cy="140" r="10" fill="#3B9FE8"/>
+      <circle cx="60" cy="140" r="10" fill="#3B9FE8"/>
+      <circle cx="170" cy="100" r="7" fill="#1A3560" opacity="0.5"/>
+      <circle cx="30" cy="100" r="7" fill="#1A3560" opacity="0.5"/>
+      <line x1="100" y1="100" x2="140" y2="60" stroke="#3B9FE8" stroke-width="1.5"/>
+      <line x1="100" y1="100" x2="60" y2="60" stroke="#3B9FE8" stroke-width="1.5"/>
+      <line x1="100" y1="100" x2="140" y2="140" stroke="#3B9FE8" stroke-width="1.5"/>
+      <line x1="100" y1="100" x2="60" y2="140" stroke="#3B9FE8" stroke-width="1.5"/>
+      <line x1="100" y1="100" x2="170" y2="100" stroke="#1A3560" stroke-width="1" opacity="0.5"/>
+      <line x1="100" y1="100" x2="30" y2="100" stroke="#1A3560" stroke-width="1" opacity="0.5"/>
+    </svg>
+  </div>
+
+  <!-- Conteúdo Hero -->
+  <div class="hero-left">
+    <div class="hero-badge">Odontologia de Alto Padrão</div>
+    <h1 class="hero-h1">
+      O Sorriso que você<br>
+      <strong>Sempre Mereceu,</strong><br>
+      <em>Finalmente ao Seu Alcance</em>
+    </h1>
+    <p class="hero-sub">
+      Implantes, Aparelhos e Cirurgias Avançadas com planejamento digital individualizado — porque cada sorriso é único e merece um tratamento à altura da sua importância.
+    </p>
+    <div class="hero-actions">
+      <a href="https://app.simplesdental.com/simples/agendamento/draflaviathibes" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/>
+          <line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+        Agendar Avaliação
+      </a>
+      <a href="#sobre" class="btn-ghost">
+        Conheça a Clínica
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Foto em Moldura Refinada -->
+  <div class="hero-right">
+    <div class="photo-frame">
+      <div class="photo-inner">
+        <img src="https://github.com/leandro06022/dentista-fl-via/blob/main/Design%20sem%20nome%20(22).png?raw=true">
+      </div>
+
+      <div class="float-accent float-accent-1">
+        <div class="dot"></div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:#1A3560">Caçador — SC</div>
+          <div style="font-size:10px;font-weight:500;color:#6B7A8D;letter-spacing:0.05em">Glass Center, Sala 301</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ════════════════════════════════════════════
+     FAIXA DE ESTATÍSTICAS
+════════════════════════════════════════════ -->
+<div class="stats-strip">
+  <div class="stat-item reveal">
+    <div class="stat-number"><span class="counter" data-target="16">0</span><span>+</span></div>
+    <div class="stat-label">Anos de Experiência</div>
+  </div>
+  <div class="stat-item reveal reveal-delay-1">
+    <div class="stat-number"><span class="counter" data-target="3000">0</span><span>+</span></div>
+    <div class="stat-label">Sorrisos Transformados</div>
+  </div>
+  <div class="stat-item reveal reveal-delay-2">
+    <div class="stat-number"><span class="counter" data-target="98">0</span><span>%</span></div>
+    <div class="stat-label">Satisfação dos Pacientes</div>
+  </div>
+  <div class="stat-item reveal reveal-delay-3">
+    <div class="stat-number"><span class="counter" data-target="3">0</span></div>
+    <div class="stat-label">Especialidades Premium</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     ESPECIALIDADES
+════════════════════════════════════════════ -->
+<section class="especialidades" id="especialidades">
+  <div class="esp-header reveal">
+    <div class="section-eyebrow">Nossas Especialidades</div>
+    <h2 class="section-title">Tratamentos de <strong>Alto Padrão,</strong><br>Resultados Extraordinários</h2>
+    <p class="section-sub">Cada tratamento é planejado individualmente com tecnologia digital de ponta — do diagnóstico preciso ao resultado final, com atenção a cada detalhe do seu sorriso.</p>
+  </div>
+
+  <div class="cards-grid">
+
+    <!-- Card 1: Aparelhos Ortodônticos -->
+    <div class="card reveal reveal-delay-1">
+      <div class="card-number">01</div>
+      <div class="card-icon">
+        <!-- Ícone: Alinhador transparente premium / invisalign estético -->
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Arcada dentária superior (visão frontal, contorno suave) -->
+          <path d="M10 36 Q10 20 18 14 Q24 10 32 10 Q40 10 46 14 Q54 20 54 36"
+                stroke="#1A3560" stroke-width="1.1" fill="rgba(26,53,96,0.04)" stroke-linecap="round"/>
+          <!-- Alinhador transparente (overlay deslocado) -->
+          <path d="M8 37 Q8 19 17 13 Q23 9 32 9 Q41 9 47 13 Q56 19 56 37"
+                stroke="#3B9FE8" stroke-width="1.6" fill="rgba(59,159,232,0.05)" stroke-linecap="round"/>
+          <!-- Dentes individuais (incisivos e caninos) -->
+          <!-- Incisivo central esq -->
+          <rect x="22" y="21" width="8" height="13" rx="2" stroke="#2A5FAC" stroke-width="1" fill="rgba(255,255,255,0.6)"/>
+          <!-- Incisivo central dir -->
+          <rect x="34" y="21" width="8" height="13" rx="2" stroke="#2A5FAC" stroke-width="1" fill="rgba(255,255,255,0.6)"/>
+          <!-- Incisivo lateral esq -->
+          <rect x="14" y="23" width="7" height="11" rx="2" stroke="#3B9FE8" stroke-width="0.9" fill="rgba(255,255,255,0.5)"/>
+          <!-- Incisivo lateral dir -->
+          <rect x="43" y="23" width="7" height="11" rx="2" stroke="#3B9FE8" stroke-width="0.9" fill="rgba(255,255,255,0.5)"/>
+          <!-- Canino esq -->
+          <path d="M10 34 Q10 28 13 25 L16 23 L16 34 Z" stroke="#3B9FE8" stroke-width="0.8" fill="rgba(255,255,255,0.4)" stroke-linejoin="round"/>
+          <!-- Canino dir -->
+          <path d="M54 34 Q54 28 51 25 L48 23 L48 34 Z" stroke="#3B9FE8" stroke-width="0.8" fill="rgba(255,255,255,0.4)" stroke-linejoin="round"/>
+          <!-- Reflexo do alinhador (brilho superior) -->
+          <path d="M16 16 Q32 11 48 16" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+          <!-- Linha de separação gengiva/alinhador -->
+          <path d="M10 36 Q32 40 54 36" stroke="#B8966E" stroke-width="0.7" fill="none" stroke-linecap="round" opacity="0.5"/>
+          <!-- Indicador de precisão (pequeno ângulo técnico) -->
+          <path d="M56 42 L60 42 L60 30" stroke="#B8966E" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+          <circle cx="60" cy="30" r="1.5" fill="#B8966E" opacity="0.6"/>
+          <!-- Sparkle de brilho do alinhador -->
+          <path d="M8 18 L8.8 20.5 L11.5 18 L8.8 15.5 Z" fill="#3B9FE8" opacity="0.55"/>
+          <path d="M56 14 L56.6 16 L58.5 14 L56.6 12 Z" fill="#B8966E" opacity="0.5"/>
+        </svg>
+      </div>
+      <h3>Aparelhos Ortodônticos</h3>
+      <p>Correção do alinhamento e oclusão dentária com planejamento digital e tecnologia contemporânea. Do aparelho convencional aos alinhadores estéticos invisíveis — com resultados precisos e duradouros.</p>
+    </div>
+
+    <!-- Card 2: Implantes -->
+    <div class="card reveal reveal-delay-2">
+      <div class="card-number">02</div>
+      <div class="card-icon">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 26 C17 18 18 10 22 7 C25 5 28 6 30 9 C31 11 33 11 34 9 C36 6 39 5 42 7 C46 10 47 18 45 26 Z"
+                stroke="#3B9FE8" stroke-width="1.4" fill="rgba(59,159,232,0.06)" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M32 9 L32 22" stroke="#3B9FE8" stroke-width="0.7" stroke-dasharray="1.5 2" stroke-linecap="round" opacity="0.5"/>
+          <rect x="28" y="26" width="8" height="5" rx="1" stroke="#3B9FE8" stroke-width="1.2" fill="rgba(59,159,232,0.08)"/>
+          <rect x="29.5" y="31" width="5" height="22" rx="2.5" stroke="#3B9FE8" stroke-width="1.2" fill="rgba(59,159,232,0.04)"/>
+          <path d="M27.5 34 Q32 32.5 36.5 34" stroke="#3B9FE8" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+          <path d="M27.5 37.5 Q32 36 36.5 37.5" stroke="#3B9FE8" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+          <path d="M27.5 41 Q32 39.5 36.5 41" stroke="#3B9FE8" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+          <path d="M27.5 44.5 Q32 43 36.5 44.5" stroke="#3B9FE8" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+          <path d="M27.5 48 Q32 46.5 36.5 48" stroke="#3B9FE8" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+          <path d="M28.5 51 Q32 50 35.5 51" stroke="#3B9FE8" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+          <path d="M29.5 53 Q32 56 34.5 53" stroke="#3B9FE8" stroke-width="1" fill="none" stroke-linecap="round"/>
+          <line x1="30.5" y1="32" x2="30.5" y2="52" stroke="white" stroke-width="0.5" opacity="0.4"/>
+        </svg>
+      </div>
+      <h3>Implantes Dentários</h3>
+      <p>Reabilitação oral definitiva com implantes de titânio de última geração. Recuperamos função, estética e confiança — com planejamento 3D e protocolos de precisão cirúrgica.</p>
+    </div>
+
+    <!-- Card 3: Cirurgias Avançadas -->
+    <div class="card reveal reveal-delay-3">
+      <div class="card-number">03</div>
+      <div class="card-icon">
+        <!-- Ícone: Mão cirúrgica segurando instrumento — precisão e confiança -->
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Luva cirúrgica (pulso/mão) -->
+          <path d="M20 52 L20 38 Q20 34 24 32 L24 20 Q24 17 26.5 17 Q29 17 29 20 L29 30"
+                stroke="#1A3560" stroke-width="1.3" fill="rgba(26,53,96,0.06)" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- Dedo indicador -->
+          <path d="M29 30 L29 18 Q29 15 31.5 15 Q34 15 34 18 L34 30"
+                stroke="#1A3560" stroke-width="1.3" fill="rgba(26,53,96,0.05)" stroke-linecap="round"/>
+          <!-- Dedo médio -->
+          <path d="M34 30 L34 17 Q34 14 36.5 14 Q39 14 39 17 L39 30"
+                stroke="#1A3560" stroke-width="1.3" fill="rgba(26,53,96,0.05)" stroke-linecap="round"/>
+          <!-- Dedo anelar -->
+          <path d="M39 30 L39 19 Q39 16 41.5 16 Q44 16 44 19 L44 30"
+                stroke="#1A3560" stroke-width="1.2" fill="rgba(26,53,96,0.04)" stroke-linecap="round"/>
+          <!-- Palma da mão fechando -->
+          <path d="M20 38 Q20 52 32 54 Q44 52 44 38 L44 30 L20 30 Z"
+                stroke="#2A5FAC" stroke-width="1.3" fill="rgba(42,95,172,0.07)" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- Instrumento (cureta/sonda) -->
+          <line x1="32" y1="10" x2="32" y2="34" stroke="#3B9FE8" stroke-width="1.8" stroke-linecap="round"/>
+          <!-- Cabeça da sonda -->
+          <ellipse cx="32" cy="8" rx="2.5" ry="3.5" stroke="#3B9FE8" stroke-width="1.3" fill="rgba(59,159,232,0.1)"/>
+          <!-- Reflexo no instrumento -->
+          <line x1="31" y1="11" x2="31" y2="30" stroke="white" stroke-width="0.5" stroke-linecap="round" opacity="0.5"/>
+          <!-- Partícula de precisão / sparkle -->
+          <path d="M46 10 L47 13 L50 10 L47 7 Z" fill="#B8966E" opacity="0.7"/>
+          <path d="M14 18 L14.8 20.5 L17 18 L14.8 15.5 Z" fill="#3B9FE8" opacity="0.5"/>
+          <!-- Linha de incisão (cirurgia) -->
+          <path d="M22 44 Q32 41 42 44" stroke="#B8966E" stroke-width="0.8" fill="none" stroke-linecap="round" stroke-dasharray="2 2" opacity="0.6"/>
+          <!-- Ponto de sutura -->
+          <path d="M28 46 Q30 43 32 46 Q34 43 36 46" stroke="#B8966E" stroke-width="0.8" fill="none" stroke-linecap="round" opacity="0.5"/>
+        </svg>
+      </div>
+      <h3>Cirurgias Avançadas</h3>
+      <p>Procedimentos cirúrgicos complexos realizados com protocolos internacionais de segurança, sedação consciente e tecnologia de imagem 3D — em ambiente clínico de alto padrão.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     BANNER MÁRMORE / CRO
+════════════════════════════════════════════ -->
+<div class="marble-banner">
+  <div class="banner-text reveal">
+    <h3>Experiência clínica reconhecida.<br><em>Resultados que falam por si.</em></h3>
+    <p>Formação sólida, ética profissional e rigor técnico reconhecidos — cada paciente recebe o nível de cuidado que só a verdadeira especialização pode oferecer.</p>
+  </div>
+  <div class="banner-cro reveal reveal-delay-2">
+    <div class="cro-label">Registro Profissional</div>
+    <div class="cro-number">CRO|SC 10506</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     SOBRE
+════════════════════════════════════════════ -->
+<section class="sobre" id="sobre">
+  <div class="sobre-image reveal">
+    <div class="sobre-img-wrap">
+      <img src="https://github.com/leandro06022/dentista-fl-via/blob/main/Design%20sem%20nome%20(23).png?raw=true">
+    </div>
+    <div class="sobre-badge">
+      <div class="big"><span class="counter" data-target="16">0</span><span style="color:#D4B896">+</span></div>
+      <div class="small">Anos de<br>Excelência</div>
+    </div>
+  </div>
+
+  <div class="sobre-content reveal reveal-delay-2">
+    <div class="section-eyebrow">Sobre a Clínica</div>
+    <h2 class="section-title">Precisão Técnica,<br><strong>Cuidado Humanizado</strong></h2>
+    <p class="section-sub">A Dra. Flávia Thibes construiu sua trajetória sobre um princípio simples: cada paciente merece atenção irrestrita, diagnóstico preciso e um plano de tratamento desenvolvido exclusivamente para ele. Tecnologia e humanização caminham juntas em cada consulta.</p>
+    <ul class="sobre-list">
+      <li>
+        <div class="check">
+          <svg viewBox="0 0 12 12" fill="none" stroke="#3B9FE8" stroke-width="2.5" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg>
+        </div>
+        Planejamento digital em 3D para diagnóstico preciso e cirurgias seguras
+      </li>
+      <li>
+        <div class="check">
+          <svg viewBox="0 0 12 12" fill="none" stroke="#3B9FE8" stroke-width="2.5" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg>
+        </div>
+        Protocolos de esterilização e biossegurança de referência internacional
+      </li>
+      <li>
+        <div class="check">
+          <svg viewBox="0 0 12 12" fill="none" stroke="#3B9FE8" stroke-width="2.5" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg>
+        </div>
+        Atendimento personalizado e plano de tratamento individual para cada caso
+      </li>
+      <li>
+        <div class="check">
+          <svg viewBox="0 0 12 12" fill="none" stroke="#3B9FE8" stroke-width="2.5" stroke-linecap="round"><polyline points="2,6 5,9 10,3"/></svg>
+        </div>
+        Ambiente moderno e acolhedor, projetado para o conforto e segurança do paciente
+      </li>
+    </ul>
+    <div class="drs-tags">
+      <span class="dr-tag">Dra. Flávia Thibes — CRO|SC 10506</span>
+      <span class="dr-tag">Implantes · Aparelhos · Cirurgias</span>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     DEPOIMENTOS
+════════════════════════════════════════════ -->
+<section class="depoimentos" id="depoimentos">
+  <div class="dep-header reveal">
+    <div class="section-eyebrow">Depoimentos</div>
+    <h2 class="section-title">O que Nossos Pacientes<br><strong>Dizem</strong></h2>
+  </div>
+
+  <div class="dep-grid">
+
+    <div class="dep-card reveal reveal-delay-1">
+      <div class="stars">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <p class="dep-text">"Fiz meu implante aqui e o resultado superou todas as expectativas. Profissionalismo, cuidado e tecnologia de ponta em cada etapa do tratamento."</p>
+      <div class="dep-author">
+        <div class="dep-avatar">CM</div>
+        <div>
+          <div class="dep-name">Carlos M.</div>
+          <div class="dep-city">Implantes Dentários</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dep-card reveal reveal-delay-2">
+      <div class="stars">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <p class="dep-text">"O aparelho que coloquei aqui transformou meu sorriso e minha autoestima. Atendimento humanizado, ambiente premium e resultado impecável."</p>
+      <div class="dep-author">
+        <div class="dep-avatar">AF</div>
+        <div>
+          <div class="dep-name">Ana F.</div>
+          <div class="dep-city">Aparelhos Ortodônticos</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dep-card reveal reveal-delay-3">
+      <div class="stars">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <p class="dep-text">"Realizei uma cirurgia aqui e a segurança e cuidado em cada detalhe foram impressionantes. Recuperação rápida, resultado perfeito. Recomendo com certeza."</p>
+      <div class="dep-author">
+        <div class="dep-avatar">RS</div>
+        <div>
+          <div class="dep-name">Roberto S.</div>
+          <div class="dep-city">Cirurgia Avançada</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     CTA — AGENDAMENTO
+════════════════════════════════════════════ -->
+<section class="cta-section" id="contato">
+  <div class="section-eyebrow">Dê o Primeiro Passo</div>
+  <h2 class="section-title reveal">Agende Sua Avaliação<br>Sem Compromisso</h2>
+  <p class="section-sub reveal">Converse com nossa equipe e descubra o tratamento ideal para o seu sorriso. Atendimento personalizado, tecnologia de ponta e agendamento online simples e rápido.</p>
+  <div class="cta-actions reveal">
+    <a href="tel:+5549999749454" class="btn-white">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+      </svg>
+      (49) 99974-9454
+    </a>
+    <a href="https://api.whatsapp.com/send?phone=5549999749454&text=Ol%C3%A1!%20Vi%20o%20site%20da%20Dra.%20Fl%C3%A1via%20Thibes%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o.%20Poderiam%20me%20passar%20os%20hor%C3%A1rios%20dispon%C3%ADveis%3F" class="btn-outline-white" target="_blank" rel="noopener">
+      <svg width="17" height="17" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 0C7.163 0 0 7.163 0 16c0 2.833.738 5.49 2.031 7.796L0 32l8.418-2.007A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 01-6.765-1.848l-.485-.288-5.003 1.194 1.225-4.87-.316-.499A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.775c-.398-.199-2.352-1.16-2.717-1.292-.364-.133-.629-.199-.894.199-.265.398-.994 1.192-1.219 1.457-.225.265-.449.3-.847.1-.398-.199-1.68-.619-3.2-1.976-1.183-1.056-1.98-2.36-2.213-2.758-.232-.398-.025-.613.174-.81.178-.178.398-.465.597-.698.199-.232.265-.398.398-.663.133-.265.066-.497-.033-.696-.1-.199-.894-2.154-1.225-2.95-.322-.773-.648-.668-.894-.68l-.762-.013c-.265 0-.696.1-1.06.497-.365.398-1.393 1.36-1.393 3.316s1.426 3.846 1.625 4.11c.199.265 2.806 4.283 6.797 6.005.95.41 1.691.654 2.269.838.953.303 1.82.26 2.505.158.764-.114 2.352-.961 2.683-1.889.332-.928.332-1.723.232-1.889-.099-.166-.364-.265-.762-.464z"/>
+      </svg>
+      WhatsApp
+    </a>
+    <a href="https://app.simplesdental.com/simples/agendamento/draflaviathibes" class="btn-outline-white">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="18" rx="2"/>
+        <line x1="16" y1="2" x2="16" y2="6"/>
+        <line x1="8" y1="2" x2="8" y2="6"/>
+        <line x1="3" y1="10" x2="21" y2="10"/>
+      </svg>
+      Agendar Online
+    </a>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="name">Dra. Flávia Thibes</div>
+      <div class="tagline">Odontologia de Alto Padrão</div>
+      <p>Tecnologia, precisão e cuidado humanizado a serviço do seu sorriso — em Caçador, SC. Uma clínica construída sobre confiança, ética e resultados que transformam vidas.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Especialidades</h4>
+      <ul>
+        <li><span style="color:rgba(255,255,255,0.5);font-size:13px;font-weight:300;">Aparelhos Ortodônticos</span></li>
+        <li><span style="color:rgba(255,255,255,0.5);font-size:13px;font-weight:300;">Implantes Dentários</span></li>
+        <li><span style="color:rgba(255,255,255,0.5);font-size:13px;font-weight:300;">Cirurgias Avançadas</span></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Navegação</h4>
+      <ul>
+        <li><a href="#home">Início</a></li>
+        <li><a href="#especialidades">Especialidades</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <div class="footer-contact-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+        <span>Edifício Glass Center<br>Rua Herculano Coelho de Souza, 800<br>Sala 301 — Reunidas<br>Caçador — SC, 89504-590</span>
+      </div>
+      <div class="footer-contact-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+        </svg>
+        <span><a href="tel:+5549999749454">(49) 99974-9454</a></span>
+      </div>
+      <div class="footer-contact-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <rect x="3" y="4" width="18" height="18" rx="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/>
+          <line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+        <span><a href="https://app.simplesdental.com/simples/agendamento/draflaviathibes">Agendar Consulta Online</a></span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Dra. Flávia Thibes — CRO|SC 10506. Todos os direitos reservados.</p>
+    <p>Desenvolvido com <span>♥</span> para transformar sorrisos</p>
+  </div>
+</footer>
+
+<script>
+// ─── NAV: SCROLL EFFECT ─────────────────────
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// ─── REVEAL: INTERSECTION OBSERVER ──────────
+const reveals = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+reveals.forEach(el => revealObserver.observe(el));
+
+// ─── CONTADOR ANIMADO ─────────────────────
+function animateCounter(el) {
+  const target = parseInt(el.dataset.target);
+  const duration = 2000;
+  const start = performance.now();
+  const update = (now) => {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.floor(eased * target).toLocaleString('pt-BR');
+    if (progress < 1) requestAnimationFrame(update);
+    else el.textContent = target.toLocaleString('pt-BR');
+  };
+  requestAnimationFrame(update);
+}
+
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateCounter(entry.target);
+      counterObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
+
+// ─── PARALLAX MOLECULE ──────────────────────
+const molecule = document.getElementById('molecule');
+if (molecule) {
+  window.addEventListener('mousemove', (e) => {
+    const x = (e.clientX / window.innerWidth - 0.5) * 18;
+    const y = (e.clientY / window.innerHeight - 0.5) * 18;
+    molecule.style.transform = `translate(${x}px, ${y}px)`;
+  });
+}
+</script>
+</body>
+</html>
